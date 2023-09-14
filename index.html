@@ -105,6 +105,51 @@ h2 {
 .section-header__results *:nth-child(4) {
   margin-left: auto;
 }
+
+div.clickEffect {
+  position: fixed;
+  box-sizing: border-box;
+  border-style: double;
+  border-color: #0000ff;
+  border-radius: 50%;
+  -webkit-animation: clickEffect 0.4s ease-out;
+          animation: clickEffect 0.4s ease-out;
+  z-index: 99999;
+}
+
+@-webkit-keyframes clickEffect {
+  0% {
+    opacity: 1;
+    width: 0.5em;
+    height: 0.5em;
+    margin: -0.25em;
+    border-width: 0.5em;
+  }
+  100% {
+    opacity: 0.2;
+    width: 15em;
+    height: 15em;
+    margin: -7.5em;
+    border-width: 0.1em;
+  }
+}
+
+@keyframes clickEffect {
+  0% {
+    opacity: 1;
+    width: 0.5em;
+    height: 0.5em;
+    margin: -0.25em;
+    border-width: 0.5em;
+  }
+  100% {
+    opacity: 0.2;
+    width: 15em;
+    height: 15em;
+    margin: -7.5em;
+    border-width: 0.1em;
+  }
+}
 </style>
 
 
@@ -735,6 +780,8 @@ new Vue({
 new ClipboardJS('.copy-results');
 
 TweenMax.to(".rotate", 4, {rotation:360, repeat:-1, transformOrigin:"50% 50%", ease:Linear.easeNone})
+
+function clickEffect(e){var d=document.createElement("div");d.className="clickEffect";d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";document.body.appendChild(d);d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));}document.addEventListener('click',clickEffect);
     </script>
 
 
