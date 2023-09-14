@@ -1680,6 +1680,7 @@ a.box:active {
     padding-top: calc(.375em - 1px);
     text-align: center;
     white-space: nowrap
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button strong {
