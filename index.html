@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, user-scalable=yes">
+
+
+
+
+  <title>紫微占卦</title>
+
+  <link rel="stylesheet" href="normalize.min.css">
+
+  <link rel='stylesheet' href='bulma.min.css'>
+
+<style>
+html {
+  background-color: #dddddd;
+}
+
+body {
+  margin: 20px;
+}
+
+header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 6px;
+}
+.options .field:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+.options .label.is-small {
+  color: #000000;
+}
+
+.options-item {
+  padding: 10px;
+  background-color: #bbbbbb;
+  border-radius: 10px;
+  max-width: 500px;
+  width: auto;
+}
+.options-item:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+.results {
+  box-sizing: border-box;
+  margin-right: 20px;
+}
+.results .index {
+  width: 2rem;
+  color: #aaaaaa;
+}
+
+.section-header {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-header-menu {
+  padding-bottom: 1rem;
+}
+
+.section-header-option {
+  display: flex;
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+}
+.section-header-option h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-header__results {
+  background-color: #dddddd;
+}
+.section-header__results h2 {
+  font-size: 2em;
+  margin-right: 2rem;
+}
+.section-header__results *:nth-child(4) {
+  margin-left: auto;
+}
+</style>
+
+
+
+
+</head>
+
+<body>
+  <header>
+  <h1>紫微占卦</h1>
+</header>
+<h2>按下太極符號取卦</h2>
+<h2>按下複製符號貼給老師</h2>
+<br />
+<br />
+<div id="app">
+  <div class="results">
+    <div class="section-header section-header__results">
+      <button class="button is-rounded is-large copy-results is-text" :data-clipboard-text="copyAllResults" title="複製"><span class="icon is-large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <path fill="#e0e0e0" d="M79.061 26.519 64.523 11.981c-1.066-1.043-2.04-1.545-2.931-1.55H29.948c-.844 0-1.531.682-1.531 1.52v67.151c0 .838.687 1.52 1.531 1.52H79c.844 0 1.531-.682 1.531-1.52V29.45c.007-.893-.455-1.865-1.47-2.931z" style="fill:#ff0;animation-play-state:paused"></path>
+            <path fill="#666" d="M65.581 26.519h13.48L64.523 11.981v13.48c0 .583.474 1.058 1.058 1.058z" style="fill:#f9ae5c;animation-play-state:paused"></path>
+            <path fill="#323232" d="M65.439 8.203a2.395 2.395 0 0 0-1.702-.703H29.948c-2.46 0-4.462 1.997-4.462 4.451v67.151c0 2.454 2.002 4.451 4.462 4.451H79c2.46 0 4.462-1.997 4.462-4.451v-50.5a5.846 5.846 0 0 0-1.733-4.17L65.439 8.203zm-.916 3.778 14.538 14.538h-13.48a1.059 1.059 0 0 1-1.058-1.058M80.53 79.102c0 .838-.687 1.52-1.531 1.52H29.948a1.527 1.527 0 0 1-1.531-1.52V11.951c0-.838.687-1.52 1.531-1.52h31.643V25.46c0 2.2 1.79 3.99 3.99 3.99H80.53v49.652z" style="fill:#e4812f;animation-play-state:paused"></path>
+            <path fill="#e0e0e0" d="M70.113 35.466 55.575 20.928c-1.066-1.043-2.04-1.545-2.931-1.55H21.001c-.844 0-1.531.682-1.531 1.52v67.151c0 .838.687 1.52 1.531 1.52h49.052c.844 0 1.531-.682 1.531-1.52V38.398c.007-.893-.455-1.866-1.471-2.932z" style="fill:#ff0;animation-play-state:paused"></path>
+            <path fill="#666" d="M56.634 35.466h13.48L55.575 20.928v13.48a1.06 1.06 0 0 0 1.059 1.058z" style="fill:#f9ae5c;animation-play-state:paused"></path>
+            <path fill="#323232" d="M56.492 17.151a2.392 2.392 0 0 0-1.702-.703H21.001c-2.46 0-4.462 1.997-4.462 4.451V88.05c0 2.454 2.002 4.451 4.462 4.451h49.052c2.46 0 4.462-1.997 4.462-4.451v-50.5a5.846 5.846 0 0 0-1.733-4.17l-16.29-16.229zm-.917 3.777 14.538 14.538h-13.48a1.059 1.059 0 0 1-1.058-1.058m16.008 53.641c0 .838-.687 1.52-1.531 1.52H21.001a1.527 1.527 0 0 1-1.531-1.52V20.898c0-.838.687-1.52 1.531-1.52h31.643v15.029c0 2.2 1.79 3.99 3.99 3.99h14.949v49.652z" style="fill:#e4812f;animation-play-state:paused"></path>
+          </svg></span></button>
+      <button class="button is-rounded is-large copy-results is-text" @click.prevent="generateTimes" :data-clipboard-text="copyAllResults" title="再生成"><span class="icon is-large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+            <g class="rotate">
+              <defs>
+                <filter id="a">
+                  <feGaussianBlur stdDeviation="5" />
+                </filter>
+              </defs>
+              <circle cx="125" cy="125" r="116.6" fill="#7f7f7f" filter="url(#a)" opacity=".5" />
+              <circle cx="125" cy="125" r="113.2" fill="#fff" />
+              <path d="M125 11.8a56.6 56.6 0 0 1 0 113.2 56.6 56.6 0 0 0 0 113.2 113.2 113.2 0 0 0 0-226.4" />
+              <circle cx="125" cy="68.4" r="17.6" />
+              <circle cx="125" cy="181.6" r="17.6" fill="#fff" />
+            </g>
+          </svg></span></button>
+    </div>
+    <div class="section-header-menu">
+      <div class="select is-rounded is-large">
+        <select v-model="options.sort">
+          <option value="random">無排序</option>
+          <option value="newest">時間降序</option>
+          <option value="oldest">時間升序</option>
+        </select>
+      </div>
+      <div class="select is-rounded is-large">
+        <select v-model="options.num">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>時間序列</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="time, index in results">
+          <td class="index">{{ index + 1 }}</td>
+          <td>{{ time }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="options">
+    <div class="section-header-option">
+      <h3>詳細設定</h3>
+    </div>
+    <div class="field">
+      <label class="label">時間起迄</label>
+      <div class="options-item">
+        <div class="columns is-mobile is-variable is-1">
+          <div class="column">
+            <div class="input-date">
+              <label class="label is-small">START</label>
+              <input class="input is-small" placeholder="YYYY/MM/DD" v-model="options.range.start" :class="{ 'is-danger': range.start.isValid === false }" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="input-date">
+              <label class="label is-small">END</label>
+              <input class="input is-small" placeholder="YYYY/MM/DD" v-model="options.range.end" :class="{ 'is-danger': range.end.isValid === false }" />
+            </div>
+          </div>
+        </div>
+        <ul class="help">
+          <li><a class="button is-text is-small" @click.prevent="changeRange('divine')">占卦預設</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeRange('today')">本日</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeRange('this week')">本週</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeRange('this month')">本月</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeRange('this quarter')">本季</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeRange('this year')">本年度</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">時間格式</label>
+      <div class="options-item">
+        <input class="input" type="text" placeholder="YYYY/MM/DD HH:mm:ss" v-model="options.format" />
+        <ul class="help">
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD HH:mm:ss')">1980/03/27 17:34:56</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD HH:mm')">1980/03/27 17:34</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD')">1980/03/27</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('HH:mm')">17:34</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD (ddd) HH:mm:ss')">1980/03/27 (Thu) 17:34:56</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('dddd, MMMM Do YYYY, h:mm:ss a')">Thursday, March 27th 1980, 5:34:56 pm</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('H:mm:ss.SSS')">17:34:56.012</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('X')">Unix Timestamp</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('x')">Unix Millisecond Timestamp</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('Qo')">Quarter</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('DDDo')">Day of Year</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('Wo')">Week of Year</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">排除以下時間</label>
+      <div class="options-item">
+        <div class="columns is-mobile is-variable is-1" v-for="(item, index) in options.not">
+          <div class="column">
+            <div class="input-date">
+              <label class="label is-small">START</label>
+              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm" v-model="item.start" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
+            </div>
+          </div>
+          <div class="column">
+            <div class="input-date">
+              <label class="label is-small">END</label>
+              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm" v-model="item.end" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src='moment.min.js'></script>
+<script src='vue.min.js'></script>
+<script src='lodash.min.js'></script>
+<script src='clipboard.min.js'></script>
+<script src='tweenmax.js'></script>
+      <script id="rendered-js" >
+// デフォルトの範囲設定
+const end = moment();
+const start = end.subtract(1, 'years');
+
+// 時間、日付の正規表現
+const timeFormat = new RegExp(/^\s*\d{1,2}\s*:\s*\d{1,2}\s*[\.|:]?\d+$/);
+const dateFormat = new RegExp(/^\s*\d{1,2}\s*\/\s*\d{1,2}$/);
+
+// TODO optionsをcookieに保存する？
+// TODO 含まない期間を指定できるようにする（複数のstart, end）
+// 時間だけのとき、期間のときがある
+
+const state = {
+    times: [],  // 生成した年月日
+
+    // 設定（入力 or 選択される）
+    options: {
+        num: 1,
+        sort: 'random',
+        format: 'YYYY/MM/DD HH:mm:ss',
+        range: {
+            // とりあえず今年にしておく
+            start: moment([1900]).startOf('year').format('YYYY/M/D'),
+            end: moment([2000]).endOf('year').format('YYYY/M/D')
+        },
+        // 結果から除外する日時
+        not: [
+            {start: null, end: null},
+            {start: null, end: null},
+            {start: null, end: null}
+        ]
+    }
+};
+
+
+/**
+ * 有効な範囲を取得する
+ *
+ * @param range { start: number, end: number } 日時の範囲
+ * @param not { start: number, end: number }[] 含めない範囲
+ * @return { start: number, end: number }[] 有効な範囲のリスト
+ */
+function effectiveRange(range, not) {
+    let results = [
+        {start: range.start, end: range.end}
+    ];
+
+    // notの範囲を削除していく
+    // notは昇順になっているのが前提
+    not.forEach((notItem) => {
+        for (let i = 0, len = results.length; i < len; i++) {
+            let result = results[i];
+
+            if (result !== null) {
+                if (notItem.start <= result.start && result.end <= notItem.end) {
+                    // すべての範囲がnot
+                    // 削除
+                    results[i] = null;
+                } else if (notItem.start <= result.start && result.start <= notItem.end) {
+                    // 前半がnot
+                    // notで分割する
+                    results[i] = {
+                        start: notItem.end + 1,
+                        end: result.end
+                    };
+                } else if (notItem.start <= result.end && result.end <= notItem.end) {
+                    // 後半がnot
+                    results[i] = {
+                        start: result.start,
+                        end: notItem.start - 1
+                    };
+                } else if (result.start <= notItem.start && notItem.end <= result.end) {
+                    // 途中がnot
+
+                    // 分割する
+                    results[i] = {
+                        start: result.start,
+                        end: notItem.start - 1
+                    };
+
+                    const div = {
+                        start: notItem.end + 1,
+                        end: result.end
+                    };
+
+                    results.splice(i + 1, 0, div);
+                }
+            }
+        }
+    });
+
+    // console.log('effective range', results);
+
+    // nullの要素を削除する
+    return _.compact(results);
+}
+
+
+/**
+ * 指定の時間がnotに含まれているかを判別
+ *
+ * @param time {number} 時間（ミリ秒）
+ * @param notTimes {{ start: number, end: number, isCrossOverDay: boolean }} Notの時間（ミリ秒）
+ * @param {boolean} Notに含まれているか
+ */
+function isNotTime(time, notTimes) {
+    let result = false;
+    const len = notTimes.length;
+
+    for (let i = 0; i < len; i++) {
+        const item = notTimes[i];
+
+        if (item.isCrossOverDay === false) {
+            if (item.start <= time && time <= item.end) {
+                // Notに含まれている
+                result = true;
+                break;
+            }
+        } else {
+            // 0:00をまたぐ場合
+            if ((item.start <= time && time < 86400000) || time <= item.end) {
+                // Notに含まれている
+                result = true;
+                break;
+            }
+        }
+    }
+
+    return result;
+}
+
+
+new Vue({
+    el: '#app',
+    data: state,
+
+    created: function () {
+        this.generateTimes();
+    },
+
+    methods: {
+
+        /**
+         * 年月日を生成する
+         *
+         */
+        generateTimes: function () {
+            const times = [];
+
+            // console.log('start', this.range.start, moment(this.range.start.date, 'x').format('YYYY/M/D HH:mm:ss'), 'end', this.range.end, moment(this.range.end.date, 'x').format('YYYY/M/D HH:mm:ss'));
+
+            // 有効なRange（Range内の日時からNotを取り除いた）をリストにする
+            // Notの種類が期間（'period'）のものを省く
+
+            // 含まない期間を選択
+            const notDates = this.not.filter((item) => {
+                return item.type === 'period' ? {start: item.start, end: item.end} : false;
+            });
+
+            // 含まない時間を抽出して、比較しやすいフォーマットに変換する
+            const notTimes = this.not.filter((item) => item.type === 'interval').map((item) => {
+                const startTime = item.start.split(':');
+                const endTime = item.end.split(':');
+                const weight = [60 * 60 * 1000, 60 * 1000, 1000]; // ミリ秒に変換するため時間
+
+                // HH:mm:ddをミリ秒に変換
+                const start = startTime.map((item, index) => item * weight[index]).reduce((prev, current) => prev + current);
+                const end = endTime.map((item, index) => item * weight[index]).reduce((prev, current) => prev + current);
+
+                return {
+                    start,
+                    end,
+                    isCrossOverDay: end < start // 日をまたぐか（23:00 - 5:00のような場合）
+                };
+            });
+
+            // {
+            //   type: "date"
+            //   isInput: true
+            //   isValid: true
+            //   start: 1514736072
+            //   end: 1514769000
+            // }
+
+            // Notを省いた期間のリストを生成
+            const rangeGroup = effectiveRange({
+                start: this.range.start.date,
+                end: this.range.end.date
+            }, notDates);
+            const numRangeGroup = rangeGroup.length; // 期間のグループ数
+
+
+            // 表示の最大件数分つくっておく
+            // 件数やフォーマットを変えたときに再生成させないため
+            for (let i = 0; i < 500; i++) {
+                const hit = _.random(numRangeGroup - 1);  // どのグループから選ぶか
+
+                let generated = null;
+
+                while (generated === null) {
+                    // for (let j = 0; j < 10; j++) {
+                    generated = moment(_.random(rangeGroup[hit].start, rangeGroup[hit].end, false), 'x');
+
+                    // Notの時間だったら作り直す
+                    const time = Number(generated.format('H')) * 60 * 60 * 1000
+                        + Number(generated.format('m')) * 60 * 1000
+                        + Number(generated.format('s')) * 1000;
+
+                    const result = isNotTime(time, notTimes);
+
+                    // console.log(time, generated.format('H:m:s'), result);
+
+                    // 含めない時間 or 不正な日付だったら作り直す
+                    // Notに日付をまたぐ時間を指定したときに、invalidな日時になることがある？
+                    if (result === true || generated.isValid() === false) {
+                        generated = null;
+                    }
+                }
+
+                times.push(generated);
+            }
+
+            this.times = times;
+        },
+
+        changeFormat: function (format) {
+            this.options.format = format;
+        },
+
+        /**
+         * 範囲プリセットから変更する
+         *
+         * @param label {string} プリセット名
+         */
+        changeRange: function (label) {
+            switch (label) {
+                case 'divine': // 占卦預設
+                    this.options.range.start = moment([1900]).startOf('year').format('YYYY/M/D');
+                    this.options.range.end = moment([2000]).endOf('year').format('YYYY/M/D');
+                    break;
+
+                case 'today': // 本日
+                    this.options.range.start = moment().startOf('date').format('YYYY/M/D');
+                    this.options.range.end = moment().endOf('date').format('YYYY/M/D');
+                    break;
+
+                case 'this week': // 本週
+                    this.options.range.start = moment().startOf('week').format('YYYY/M/D');
+                    this.options.range.end = moment().endOf('week').format('YYYY/M/D');
+                    break;
+
+                case 'this month':  // 本月
+                    this.options.range.start = moment().startOf('month').format('YYYY/M/D');
+                    this.options.range.end = moment().endOf('month').format('YYYY/M/D');
+                    break;
+
+                case 'this quarter':  // 本季
+                    this.options.range.start = moment().startOf('quarter').format('YYYY/M/D');
+                    this.options.range.end = moment().endOf('quarter').format('YYYY/M/D');
+                    break;
+
+                case 'this year':  // 本年度
+                    this.options.range.start = moment().startOf('year').format('YYYY/M/D');
+                    this.options.range.end = moment().endOf('year').format('YYYY/M/D');
+                    break;
+            }
+        }
+    },
+
+    computed: {
+
+        /**
+         * 表示するための時間を生成
+         *
+         */
+        results: function () {
+            const tmp = _.cloneDeep(this.times);	// Vueのレンダリングでvueインスタンス？になるのを防ぐため、複製しておく
+
+            // 件数分を指定の時間フォーマットにする
+            const items = tmp.filter((time, index) => index < this.options.num).sort((dateA, dateB) => {
+                let result = 0;	// 結果
+
+                const timeA = Number(dateA.valueOf());
+                const timeB = Number(dateB.valueOf());
+
+                // 並び替え
+                if (this.options.sort === 'newest') {
+                    // 新しい順
+                    if (timeA < timeB) {
+                        result = 1;
+                    } else if (timeA > timeB) {
+                        result = -1;
+                    }
+                } else if (this.options.sort === 'oldest') {
+                    // 古い順
+                    if (timeA > timeB) {
+                        result = 1;
+                    } else if (timeA < timeB) {
+                        result = -1;
+                    }
+                }
+
+                return result;
+            });
+
+            // ソート順を反映する
+            return items.map(time => moment(time).format(this.options.format));
+        },
+
+        /**
+         * 期間の範囲を指定する
+         *
+         */
+        range: function () {
+            const start = moment(this.options.range.start);
+            const end = moment(this.options.range.end);
+
+            // endは日付指定のみ（時間未指定）の場合、その日いっぱいを含む
+            if (end.isValid() && this.options.range.end.match(/^(\d{2,4}\s*\/)?\s*\d{1,2}\s*\/\s*\d{1,2}$/)) {
+                end.endOf('day');
+            }
+
+            // 入力された時間の範囲をミリ秒に変換する
+            // エラーだった場合は、
+            return {
+                start: {
+                    date: start.isValid() ? Number(start.format('x')) : Number(moment().startOf('day').format('x')),
+                    isValid: start.isValid()
+                },
+                end: {
+                    date: end.isValid() ? Number(end.format('x')) : Number(moment().endOf('day').format('x')),
+                    isValid: end.isValid()
+                }
+            }
+        },
+
+        /**
+         * 除外する期間、時間を計算する
+         *
+         */
+        not: function () {
+            const result = this.options.not.map((item) => {
+                // 入力された日時を補完する
+                // 文字列からフォーマットを推測する
+                // 開始、終了のどちらかが未入力なら、それ以前、それ以降と判定する
+                // 日時がおかしい or フォーマットが不明な場合は無効にする
+
+                let start = item.start; // 除外開始日時
+                let end = item.end; // 除外終了日時
+                const startDate = moment(item.start);
+                let endDate = moment(item.end);
+
+                // 日時 or 時間のみを判定する
+
+                // 書式から判定する
+                let type = null;
+                let isValid = true;
+                let isInput = false;
+
+                // console.log(startDate.format('YYYY/M/D H:mm:ss.SSS'));
+                // console.log(endDate.format('YYYY/M/D H:mm:ss.SSS'));
+
+                if (item.start !== null && item.start !== '' && item.end !== null && item.end !== '') {
+                    isInput = true;
+
+                    // console.log('---');
+                    // console.log(item.start.match(timeFormat), item.end.match(timeFormat));
+                    // console.log(startDate.isValid(), endDate.isValid());
+                    // console.log(startDate.isValid(), item.end.match(timeFormat));
+
+                    if (item.start.match(timeFormat) && item.end.match(timeFormat)) {
+                        // start, endが時間
+                        type = 'interval';
+                        start = item.start;
+                        end = item.end;
+                    } else if (startDate.isValid() && endDate.isValid()) {
+                        // start, endが日時
+                        type = 'period';
+
+                        // 開始と終了をミリ秒で保持
+                        start = Number(startDate.format('x'));
+                        end = Number(endDate.endOf('day').format('x'));  // その日いっぱいをNotにする
+
+                        if (start >= end) {
+                            isValid = false;
+                        }
+                    } else if (startDate.isValid() && item.end.match(timeFormat)) {
+                        // startが日時、endが時間
+                        // ex. 2018/1/1, 12:34
+                        type = 'period';
+
+                        // 開始と終了をミリ秒で保持
+                        start = Number(startDate.format('x'));
+                        // end = // 終了時間を計算する
+                        endDate = startDate.clone();
+
+                        // startDateとendを組み合わせて、終了時間を生成する
+                        // →時間だけ反映する
+                        const endTime = end.split(/:|\./i).map((num) => Number(num));
+                        endDate.hours(endTime[0] | 0);
+                        endDate.minutes(endTime[1] | 0);
+                        endDate.seconds(endTime[2] | 0);
+                        endDate.milliseconds(endTime[3] | 0);
+
+                        end = Number(endDate.format('x'));
+
+                        if (start >= end) {
+                            isValid = false;
+                        }
+                    } else if (startDate.isValid() && item.end.match(dateFormat)) {
+                        // startが日時、endが日付
+                        // ex. 2018/1/1, 1/10
+                        type = 'period';
+
+                        // 開始と終了をミリ秒で保持
+                        start = Number(startDate.format('x'));
+                        // end = // 終了時間を計算する
+                        end = Number(moment(`${startDate.format('YYYY')}/${item.end}`).endOf('day').format('x')); // その日いっぱいをNotにする
+
+                        if (start >= end) {
+                            isValid = false;
+                        }
+                    } else {
+                        isValid = false;
+                    }
+                }
+
+                // console.log('type', type, 'isValid', isValid, 'start', start, 'end', end);
+
+                return {
+                    start,
+                    end,
+                    type,
+                    isValid,
+                    isInput
+                };
+            });
+
+            // console.log('not', result);
+
+            return result;
+        },
+
+        /**
+         * 結果をコピーできる文字列を取得
+         *
+         */
+        copyAllResults: function () {
+            return this.results.join('\n');
+        }
+    },
+
+    watch: {
+        // 範囲が変更されたら生成しなおす
+        'range.start.date': function () {
+            this.generateTimes();
+        },
+
+        // 範囲が変更されたら生成しなおす
+        'range.end.date': function () {
+            this.generateTimes();
+        },
+
+        // 除く日時が更新されたら生成しなおす
+        'not': function () {
+            this.generateTimes();
+        }
+    }
+});
+
+new ClipboardJS('.copy-results');
+
+TweenMax.to(".rotate", 4, {rotation:360, repeat:-1, transformOrigin:"50% 50%", ease:Linear.easeNone})
+    </script>
+
+
+</body>
+
+</html>
