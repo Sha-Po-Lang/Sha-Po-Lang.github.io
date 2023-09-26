@@ -16,13 +16,11 @@
 
 <style>
 html {
-  background-color: #dddddd;
+  background-color: #ddd;
 }
-
 body {
   margin: 20px;
 }
-
 header {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -32,12 +30,10 @@ header h1 {
   font-weight: bold;
   text-align: center;
 }
-
 h2 {
   font-size: 1rem;
   text-align: center;
 }
-
 .options {
   display: flex;
   flex-wrap: wrap;
@@ -48,12 +44,11 @@ h2 {
   margin-bottom: 2rem;
 }
 .options .label.is-small {
-  color: #000000;
+  color: #000;
 }
-
 .options-item {
   padding: 10px;
-  background-color: #bbbbbb;
+  background-color: #bbb;
   border-radius: 10px;
   max-width: 500px;
   width: auto;
@@ -61,16 +56,14 @@ h2 {
 .options-item:not(:last-of-type) {
   margin-bottom: 1rem;
 }
-
 .results {
   box-sizing: border-box;
   margin-right: 20px;
 }
 .results .index {
   width: 2rem;
-  color: #aaaaaa;
+  color: #aaa;
 }
-
 .section-header {
   padding-top: 1rem;
   padding-bottom: 6rem;
@@ -80,11 +73,9 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
 }
-
 .section-header-menu {
   padding-bottom: 1rem;
 }
-
 .section-header-option {
   display: flex;
   padding-top: 6rem;
@@ -94,9 +85,8 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
 }
-
 .section-header__results {
-  background-color: #dddddd;
+  background-color: #ddd;
 }
 .section-header__results h2 {
   font-size: 2em;
@@ -105,18 +95,16 @@ h2 {
 .section-header__results *:nth-child(4) {
   margin-left: auto;
 }
-
 div.clickEffect {
   position: fixed;
   box-sizing: border-box;
   border-style: double;
-  border-color: #0000ff;
+  border-color: #00f;
   border-radius: 50%;
   -webkit-animation: clickEffect 0.4s ease-out;
           animation: clickEffect 0.4s ease-out;
   z-index: 99999;
 }
-
 @-webkit-keyframes clickEffect {
   0% {
     opacity: 1;
@@ -133,7 +121,6 @@ div.clickEffect {
     border-width: 0.1em;
   }
 }
-
 @keyframes clickEffect {
   0% {
     opacity: 1;
@@ -268,6 +255,7 @@ div.clickEffect {
           <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD HH:mm:ss')">1980/03/27 17:34:56</a></li>
           <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD HH:mm')">1980/03/27 17:34</a></li>
           <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD')">1980/03/27</a></li>
+          <li><a class="button is-text is-small" @click.prevent="changeFormat('HH:mm:ss')">17:34:56</a></li>
           <li><a class="button is-text is-small" @click.prevent="changeFormat('HH:mm')">17:34</a></li>
           <li><a class="button is-text is-small" @click.prevent="changeFormat('YYYY/MM/DD (ddd) HH:mm:ss')">1980/03/27 (Thu) 17:34:56</a></li>
           <li><a class="button is-text is-small" @click.prevent="changeFormat('dddd, MMMM Do YYYY, h:mm:ss a')">Thursday, March 27th 1980, 5:34:56 pm</a></li>
@@ -287,13 +275,13 @@ div.clickEffect {
           <div class="column">
             <div class="input-date">
               <label class="label is-small">START</label>
-              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm" v-model="item.start" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
+              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm:ss" v-model="item.start" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
             </div>
           </div>
           <div class="column">
             <div class="input-date">
               <label class="label is-small">END</label>
-              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm" v-model="item.end" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
+              <input class="input is-small" placeholder="YYYY/MM/DD or HH:mm:ss" v-model="item.end" :class="{ 'is-danger': not[index].isInput &amp;&amp; not[index].isValid === false }" />
             </div>
           </div>
         </div>
