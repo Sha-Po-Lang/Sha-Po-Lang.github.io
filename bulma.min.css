@@ -3781,7 +3781,7 @@ a.box:active {
 }
 
 .select.is-large {
-    font-size: 1.rem
+    font-size: 1rem
 }
 
 .select.is-disabled::after {
