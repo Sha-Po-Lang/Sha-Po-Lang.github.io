@@ -1721,12 +1721,12 @@ a.box:active {
     border-color: #3273dc;
     color: #363636
 }
-
+/*
 .button.is-focused:not(:active),
 .button:focus:not(:active) {
     box-shadow: 0 0 0 .125em rgba(50, 115, 220, .25)
 }
-
+*/
 .button.is-active,
 .button:active {
     border-color: #4a4a4a;
