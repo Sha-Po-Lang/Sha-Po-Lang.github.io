@@ -16,126 +16,166 @@
 
 <style>
 html {
-  background-color: #ddd;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABe0lEQVR42u3bwYnEMAwFUPebJtJDGk4BRsYmEAn0ct7RzugdgmT/cR0+z+Gj/voZGlQCYP+r7H+t+VPqz/UBVAK4gyf6B9HfRz9A/bk+AAAANAgAAA0CAECDsgEMSibhrgCWZbahXQE0NLc+gBoAXqpZ9QFUAjBY/V8fAAAAGgQAgAYBAKBB2QAGJZNwVwDLMtvQrgAa6kQMgJeqWxEADFZuxgHQIAAANAgAAA0CIB9gUDIJywdYltmGygdoqBMx+QAvVbci5AMMVm7GAQAAAAAAAAAAAJAPMIiZhOUDLONsQ+UDNNSJmHyAl6pbEfIBBis34wAAAAAAAAAAAADIBxjETMLyAZZxtqHyAeo7EZMPUN+tCPkA9d2MA6A+AADqAwCgPgD5APUByAeoD0A+wImYBskHOJTXIPkAF7M0CAAADQIAQIMAANAg+QCTsAbJB9iGapB8gBMxAPIBbkUAkA9wMw4AAAAAAAAAAAAAAPkAkzAA+QDbUACf678b+XWSYmViFAAAAABJRU5ErkJggg==');
 }
 body {
-  margin: 20px;
+    margin: 20px;
 }
 header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-}
-h2 {
-  font-size: 1rem;
-  text-align: center;
-}
-.options {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  border-radius: 6px;
-}
-.options .field:not(:last-of-type) {
-  margin-bottom: 2rem;
-}
-.options .label.is-small {
-  color: #000;
-}
-.options-item {
-  padding: 10px;
-  background-color: #bbb;
-  border-radius: 10px;
-  max-width: 500px;
-  width: auto;
-}
-.options-item:not(:last-of-type) {
-  margin-bottom: 1rem;
-}
-.results {
-  box-sizing: border-box;
-  margin-right: 20px;
-}
-.results .index {
-  width: 2rem;
-  color: #aaa;
+    font-family: 'DFKai-SB','STKaiti','Microsoft JhengHei','Noto Sans TC',sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: #fd0;
+    text-shadow: 0 0 15px #000, 0 0 15px #000;
+    text-align: center;
 }
 .section-header {
-  padding-top: 1rem;
-  padding-bottom: 6rem;
-  text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    text-align: center;
 }
-.section-header h2 {
-  font-size: 2rem;
-  font-weight: bold;
+.section-header_generate {
+    background-color: transparent;
+}
+h2 {
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
+    text-align: center;
+}
+.button.is-rounded {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+}
+svg {
+    filter: drop-shadow(0 0px 15px #fff);
 }
 .section-header-menu {
-  padding-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.select select {
+    box-shadow: 0 5px 5px #000;
+}
+.table.is-fullwidth {
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #000;
+}
+.results {
+    text-align: -webkit-center;
+}
+.results .index {
+    width: 2rem;
+    color: #000;
+    text-shadow: 0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf;
+}
+.table thead td, .table thead th:nth-child(1) {
+    text-shadow: 0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf;
+}
+.table thead td, .table thead th {
+    border-style: solid;
+    border-color: #0cf;
+}
+.table td, .table th {
+    font-weight: bolder;
+    color: #f00;
+    border-bottom: 1px dashed #000;
+}
+.options {
+    text-align: -webkit-center;
 }
 .section-header-option {
-  display: flex;
-  padding-top: 6rem;
-  padding-bottom: 1rem;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
 }
 .section-header-option h3 {
-  font-size: 2rem;
-  font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
+    font-size: 2rem;
+    font-weight: bolder;
 }
-.section-header__results {
-  background-color: #ddd;
+.options .subject {
+    line-height: 200%;
+    color: #fdc;
+    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
 }
-.section-header__results h2 {
-  font-size: 2em;
-  margin-right: 2rem;
+.options-item {
+    padding: 10px;
+    background-color: #c0c0c0;
+    border-radius: 10px;
+    max-width: 500px;
+    width: auto;
+    box-shadow: 0 5px 10px #000;
 }
-.section-header__results *:nth-child(4) {
-  margin-left: auto;
+.options-item:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+.options .label.is-small {
+    color: #840;
+}
+.input.is-small, .textarea.is-small {
+    border-radius: 10px;
+}
+.input, .textarea {
+    border-radius: 10px;
+}
+.options .button.is-text {
+    text-underline-offset: 4px;
+}
+.options .button.is-text:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    border-radius: 10px;
+}
+.options .field:not(:last-of-type) {
+    margin-bottom: 2rem;
 }
 div.clickEffect {
-  position: fixed;
-  box-sizing: border-box;
-  border-style: double;
-  border-color: #00f;
-  border-radius: 50%;
-  -webkit-animation: clickEffect 0.4s ease-out;
-          animation: clickEffect 0.4s ease-out;
-  z-index: 99999;
+    position: fixed;
+    box-sizing: border-box;
+    border-style: double;
+    border-color: #ff0;
+    border-radius: 50%;
+    -webkit-animation: clickEffect 0.3s ease-out;
+                    animation: clickEffect 0.3s ease-out;
+    z-index: 99999;
 }
 @-webkit-keyframes clickEffect {
-  0% {
-    opacity: 1;
-    width: 0.5em;
-    height: 0.5em;
-    margin: -0.25em;
-    border-width: 0.5em;
-  }
-  100% {
-    opacity: 0.2;
-    width: 15em;
-    height: 15em;
-    margin: -7.5em;
-    border-width: 0.1em;
-  }
+    0% {
+        opacity: 1;
+        width: 0.5em;
+        height: 0.5em;
+        margin: -0.25em;
+        border-width: 0.5em;
+    }
+    100% {
+        opacity: 0.2;
+        width: 15em;
+        height: 15em;
+        margin: -7.5em;
+        border-width: 0.1em;
+    }
 }
 @keyframes clickEffect {
-  0% {
-    opacity: 1;
-    width: 0.5em;
-    height: 0.5em;
-    margin: -0.25em;
-    border-width: 0.5em;
-  }
-  100% {
-    opacity: 0.2;
-    width: 15em;
-    height: 15em;
-    margin: -7.5em;
-    border-width: 0.1em;
-  }
+    0% {
+        opacity: 1;
+        width: 0.5em;
+        height: 0.5em;
+        margin: -0.25em;
+        border-width: 0.5em;
+    }
+    100% {
+        opacity: 0.2;
+        width: 15em;
+        height: 15em;
+        margin: -7.5em;
+        border-width: 0.1em;
+    }
 }
 </style>
 
@@ -154,7 +194,7 @@ div.clickEffect {
 <br />
 <div id="app">
   <div class="results">
-    <div class="section-header section-header__results">
+    <div class="section-header section-header_generate">
       <button class="button is-rounded is-large copy-results is-text" :data-clipboard-text="copyAllResults" title="複製"><span class="icon is-large"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <path fill="#e0e0e0" d="M79.061 26.519 64.523 11.981c-1.066-1.043-2.04-1.545-2.931-1.55H29.948c-.844 0-1.531.682-1.531 1.52v67.151c0 .838.687 1.52 1.531 1.52H79c.844 0 1.531-.682 1.531-1.52V29.45c.007-.893-.455-1.865-1.47-2.931z" style="fill:#ff0;animation-play-state:paused"></path>
             <path fill="#666" d="M65.581 26.519h13.48L64.523 11.981v13.48c0 .583.474 1.058 1.058 1.058z" style="fill:#f9ae5c;animation-play-state:paused"></path>
@@ -218,22 +258,22 @@ div.clickEffect {
   </div>
   <div class="options">
     <div class="section-header-option">
-      <h3>詳細設定</h3>
+      <h3>- 詳細設定 -</h3>
     </div>
     <div class="field">
-      <label class="label">時間起迄</label>
+      <label class="subject">時間起迄</label>
       <div class="options-item">
         <div class="columns is-mobile is-variable is-1">
           <div class="column">
             <div class="input-date">
               <label class="label is-small">START</label>
-              <input class="input is-small" placeholder="YYYY/MM/DD" v-model="options.range.start" :class="{ 'is-danger': range.start.isValid === false }" />
+              <input class="input is-small" placeholder="YYYY/MM/DD HH:mm:ss" v-model="options.range.start" :class="{ 'is-danger': range.start.isValid === false }" />
             </div>
           </div>
           <div class="column">
             <div class="input-date">
               <label class="label is-small">END</label>
-              <input class="input is-small" placeholder="YYYY/MM/DD" v-model="options.range.end" :class="{ 'is-danger': range.end.isValid === false }" />
+              <input class="input is-small" placeholder="YYYY/MM/DD HH:mm:ss" v-model="options.range.end" :class="{ 'is-danger': range.end.isValid === false }" />
             </div>
           </div>
         </div>
@@ -248,7 +288,7 @@ div.clickEffect {
       </div>
     </div>
     <div class="field">
-      <label class="label">時間格式</label>
+      <label class="subject">時間格式</label>
       <div class="options-item">
         <input class="input" type="text" placeholder="YYYY/MM/DD HH:mm:ss" v-model="options.format" />
         <ul class="help">
@@ -269,7 +309,7 @@ div.clickEffect {
       </div>
     </div>
     <div class="field">
-      <label class="label">排除以下時間</label>
+      <label class="subject">排除以下時間</label>
       <div class="options-item">
         <div class="columns is-mobile is-variable is-1" v-for="(item, index) in options.not">
           <div class="column">
@@ -289,7 +329,7 @@ div.clickEffect {
     </div>
   </div>
 </div>
-  <script src='moment.min.js'></script>
+<script src='moment.min.js'></script>
 <script src='vue.min.js'></script>
 <script src='lodash.min.js'></script>
 <script src='clipboard.min.js'></script>
@@ -767,8 +807,10 @@ new Vue({
 
 new ClipboardJS('.copy-results');
 
+// 太極符號旋轉特效
 TweenMax.to(".rotate", 4, {rotation:360, repeat:-1, transformOrigin:"50% 50%", ease:Linear.easeNone})
 
+// 網頁點擊特效
 function clickEffect(e){var d=document.createElement("div");d.className="clickEffect";d.style.top=e.clientY+"px";d.style.left=e.clientX+"px";document.body.appendChild(d);d.addEventListener('animationend',function(){d.parentElement.removeChild(d);}.bind(this));}document.addEventListener('click',clickEffect);
     </script>
 
