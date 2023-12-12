@@ -47,6 +47,14 @@ h2 {
     text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
     text-align: center;
 }
+h2 a {
+    color: #0ff;
+    text-shadow: 0 0 20px #000, 0 0 20px #000, 0 0 20px #000, 0 0 20px #000;
+}
+h2 a:hover {
+    color: #ff0;
+    text-shadow: 0 0 20px #fff,0 0 20px #fff;
+}
 .button.is-rounded {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -139,7 +147,7 @@ div.clickEffect {
     position: fixed;
     box-sizing: border-box;
     border-style: double;
-    border-color: #ff0;
+    border-color: #fd0;
     border-radius: 50%;
     -webkit-animation: clickEffect 0.3s ease-out;
                     animation: clickEffect 0.3s ease-out;
@@ -188,8 +196,9 @@ div.clickEffect {
   <header>
   <h1>紫微占卦</h1>
 </header>
-<h2>按下太極符號取卦</h2>
-<h2>按下複製符號貼給老師</h2>
+<h2>點擊太極圖示取時間參數</h2>
+<h2>點擊複製圖示貼給李老師</h2>
+<h2>李老師網站：<a href="https://sha-po-lang.blogspot.com/">紫微寰宇誌</a></h2>
 <br />
 <br />
 <div id="app">
@@ -329,6 +338,11 @@ div.clickEffect {
     </div>
   </div>
 </div>
+<br />
+<br />
+<h2>☞ 本網頁程序製作採用：<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.zh-hant">創用 CC 姓名標示-非商業性-禁止改作</a> 授權條款，盜用必究</h2>
+<br />
+<h2><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhw-323gQ6-6zTnGUxrqKQgSXvknBtEZ5irNtydfjkOL1dyWnf4RajfsaGP0MmL4xd9qulqPQtUYkKH7AZESC8-Yhl7g5XZ8VrdoPATASbjB-YlzxWDyLMH68cBdOp4n03FVKoy1PGWgl09y-u3adKSxagtdRxQFRnDIDbfwOZ_gTEClyGsHP_q7mmWHzLP/s1600/BY-NC-ND.png" alt="創用 CC 授權條款" /></h2>
 <script src='moment.min.js'></script>
 <script src='vue.min.js'></script>
 <script src='lodash.min.js'></script>
