@@ -16,177 +16,207 @@
 
 <style>
 html {
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABe0lEQVR42u3bwYnEMAwFUPebJtJDGk4BRsYmEAn0ct7RzugdgmT/cR0+z+Gj/voZGlQCYP+r7H+t+VPqz/UBVAK4gyf6B9HfRz9A/bk+AAAANAgAAA0CAECDsgEMSibhrgCWZbahXQE0NLc+gBoAXqpZ9QFUAjBY/V8fAAAAGgQAgAYBAKBB2QAGJZNwVwDLMtvQrgAa6kQMgJeqWxEADFZuxgHQIAAANAgAAA0CIB9gUDIJywdYltmGygdoqBMx+QAvVbci5AMMVm7GAQAAAAAAAAAAAJAPMIiZhOUDLONsQ+UDNNSJmHyAl6pbEfIBBis34wAAAAAAAAAAAADIBxjETMLyAZZxtqHyAeo7EZMPUN+tCPkA9d2MA6A+AADqAwCgPgD5APUByAeoD0A+wImYBskHOJTXIPkAF7M0CAAADQIAQIMAANAg+QCTsAbJB9iGapB8gBMxAPIBbkUAkA9wMw4AAAAAAAAAAAAAAPkAkzAA+QDbUACf678b+XWSYmViFAAAAABJRU5ErkJggg==');
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABe0lEQVR42u3bwYnEMAwFUPebJtJDGk4BRsYmEAn0ct7RzugdgmT/cR0+z+Gj/voZGlQCYP+r7H+t+VPqz/UBVAK4gyf6B9HfRz9A/bk+AAAANAgAAA0CAECDsgEMSibhrgCWZbahXQE0NLc+gBoAXqpZ9QFUAjBY/V8fAAAAGgQAgAYBAKBB2QAGJZNwVwDLMtvQrgAa6kQMgJeqWxEADFZuxgHQIAAANAgAAA0CIB9gUDIJywdYltmGygdoqBMx+QAvVbci5AMMVm7GAQAAAAAAAAAAAJAPMIiZhOUDLONsQ+UDNNSJmHyAl6pbEfIBBis34wAAAAAAAAAAAADIBxjETMLyAZZxtqHyAeo7EZMPUN+tCPkA9d2MA6A+AADqAwCgPgD5APUByAeoD0A+wImYBskHOJTXIPkAF7M0CAAADQIAQIMAANAg+QCTsAbJB9iGapB8gBMxAPIBbkUAkA9wMw4AAAAAAAAAAAAAAPkAkzAA+QDbUACf678b+XWSYmViFAAAAABJRU5ErkJggg==");
 }
 body {
-    margin: 20px;
+  margin: 20px;
 }
 header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .header-image svg {
-    scale: 0.8;
-    max-width: -webkit-fill-available;
-    filter: drop-shadow(0 0 15px #000) drop-shadow(0 0 15px #000);
+  scale: 0.8;
+  max-width: -webkit-fill-available;
+  filter: drop-shadow(0 0 15px #000) drop-shadow(0 0 15px #000);
 }
 .section-header {
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  text-align: center;
 }
 .section-header_generate {
-    background-color: transparent;
+  background-color: transparent;
 }
 h1 {
-    font-size: 1.2rem;
-    color: #fff;
-    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
-    text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+  text-align: center;
 }
 h1 a {
-    color: #0ff;
-    text-shadow: 0 0 20px #000, 0 0 20px #000, 0 0 20px #000, 0 0 20px #000;
+  color: #0ff;
+  text-shadow: 0 0 20px #000, 0 0 20px #000, 0 0 20px #000, 0 0 20px #000;
 }
 h1 a:hover {
-    color: #ff0;
-    text-shadow: 0 0 20px #fff,0 0 20px #fff;
+  color: #ff0;
+  text-shadow: 0 0 20px #fff, 0 0 20px #fff;
 }
 .button.is-rounded {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 .section-header svg {
-    filter: drop-shadow(0 0 15px #fff);
+  filter: drop-shadow(0 0 15px #fff);
 }
 .section-header-menu {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 .select select {
-    box-shadow: 0 5px 5px #000;
+  box-shadow: 0 5px 5px #000;
 }
 .table.is-fullwidth {
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px #000;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px #000;
 }
 .results {
-    text-align: -webkit-center;
+  text-align: -webkit-center;
 }
 .results .index {
-    width: 2rem;
-    color: #000;
-    text-shadow: 0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf;
+  width: 2rem;
+  color: #000;
+  text-shadow: 0 0 10px #0cf, 0 0 10px #0cf, 0 0 10px #0cf, 0 0 10px #0cf;
 }
-.table thead td, .table thead th:nth-child(1) {
-    text-shadow: 0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf,0 0 10px #0cf;
+.table thead td,
+.table thead th:nth-child(1) {
+  text-shadow: 0 0 10px #0cf, 0 0 10px #0cf, 0 0 10px #0cf, 0 0 10px #0cf;
 }
-.table thead td, .table thead th {
-    border-style: solid;
-    border-color: #0cf;
+.table thead td,
+.table thead th {
+  border-style: solid;
+  border-color: #0cf;
 }
-.table td, .table th {
-    font-weight: bolder;
-    color: #f00;
-    border-bottom: 1px dashed #000;
+.table td,
+.table th {
+  font-weight: bolder;
+  color: #f00;
+  border-bottom: 1px dashed #000;
 }
 .options {
-    text-align: -webkit-center;
+  text-align: -webkit-center;
 }
 .section-header-option {
-    padding-top: 10rem;
-    padding-bottom: 1rem;
+  padding-top: 10rem;
+  padding-bottom: 1rem;
 }
 .section-header-option h2 {
-    color: #fff;
-    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
-    font-size: 2rem;
-    font-weight: bolder;
+  color: #fff;
+  text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
+  font-size: 2rem;
+  font-weight: bolder;
 }
 .options .subject {
-    line-height: 200%;
-    color: #fdc;
-    text-shadow: 0 0 5px #000,0 0 5px #000,0 0 5px #000,0 0 5px #000;
+  line-height: 200%;
+  color: #fdc;
+  text-shadow: 0 0 5px #000, 0 0 5px #000, 0 0 5px #000, 0 0 5px #000;
 }
 .options-item {
-    padding: 10px;
-    background-color: #c0c0c0;
-    border-radius: 10px;
-    max-width: 500px;
-    width: auto;
-    box-shadow: 0 5px 10px #000;
+  padding: 10px;
+  background-color: #c0c0c0;
+  border-radius: 10px;
+  max-width: 500px;
+  width: auto;
+  box-shadow: 0 5px 10px #000;
 }
 .options-item:not(:last-of-type) {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 .options .label.is-small {
-    color: #840;
+  color: #840;
 }
-.input.is-small, .textarea.is-small {
-    border-radius: 10px;
+.input.is-small,
+.textarea.is-small {
+  border-radius: 10px;
 }
-.input, .textarea {
-    border-radius: 10px;
+.input,
+.textarea {
+  border-radius: 10px;
 }
 .options .button.is-text {
-    text-underline-offset: 4px;
+  text-underline-offset: 4px;
 }
 .options .button.is-text:hover {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  -webkit-animation-name: hoversecond;
+          animation-name: hoversecond;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+@-webkit-keyframes hoversecond {
+  from {
     background-color: #000;
+    color: #fff;
     border-radius: 10px;
+  }
+  to {
+    background-color: transparent;
+    color: #000;
+    border-radius: 10px;
+  }
+}
+@keyframes hoversecond {
+  from {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+  }
+  to {
+    background-color: transparent;
+    color: #000;
+    border-radius: 10px;
+  }
 }
 .options .field:not(:last-of-type) {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 h1 img {
-    box-shadow: 0 0 3px #0ff,0 0 3px #0ff;
+  box-shadow: 0 0 3px #0ff, 0 0 3px #0ff;
 }
 .footer-image img {
-    filter: drop-shadow(0 0 20px #ff0);
+  filter: drop-shadow(0 0 20px #ff0);
 }
 div.clickEffect {
-    position: fixed;
-    box-sizing: border-box;
-    border-style: double;
-    border-color: #fd0;
-    border-radius: 50%;
-    -webkit-animation: clickEffect 0.3s ease-out;
-                    animation: clickEffect 0.3s ease-out;
-    z-index: 99999;
+  position: fixed;
+  box-sizing: border-box;
+  border-style: double;
+  border-color: #fd0;
+  border-radius: 50%;
+  -webkit-animation: clickEffect 0.3s ease-out;
+  animation: clickEffect 0.3s ease-out;
+  z-index: 99999;
 }
 @-webkit-keyframes clickEffect {
-    0% {
-        opacity: 1;
-        width: 0.5em;
-        height: 0.5em;
-        margin: -0.25em;
-        border-width: 0.5em;
-    }
-    100% {
-        opacity: 0.2;
-        width: 15em;
-        height: 15em;
-        margin: -7.5em;
-        border-width: 0.1em;
-    }
+  0% {
+    opacity: 1;
+    width: 0.5em;
+    height: 0.5em;
+    margin: -0.25em;
+    border-width: 0.5em;
+  }
+  100% {
+    opacity: 0.2;
+    width: 15em;
+    height: 15em;
+    margin: -7.5em;
+    border-width: 0.1em;
+  }
 }
 @keyframes clickEffect {
-    0% {
-        opacity: 1;
-        width: 0.5em;
-        height: 0.5em;
-        margin: -0.25em;
-        border-width: 0.5em;
-    }
-    100% {
-        opacity: 0.2;
-        width: 15em;
-        height: 15em;
-        margin: -7.5em;
-        border-width: 0.1em;
-    }
+  0% {
+    opacity: 1;
+    width: 0.5em;
+    height: 0.5em;
+    margin: -0.25em;
+    border-width: 0.5em;
+  }
+  100% {
+    opacity: 0.2;
+    width: 15em;
+    height: 15em;
+    margin: -7.5em;
+    border-width: 0.1em;
+  }
 }
 </style>
 
